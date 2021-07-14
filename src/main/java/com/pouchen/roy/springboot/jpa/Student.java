@@ -8,6 +8,8 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.BatchSize;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "spring_boot_student")
 public class Student {
@@ -19,6 +21,7 @@ public class Student {
 	@Size(min=5, message="Name should have at least 5 characters")
 	private String name;
 	@Column
+	@JsonIgnore
 	private int age;
 	@Column
 	private String email;
